@@ -1,36 +1,40 @@
-# Image-Processing
+**********IMAGE PROCESSING************
 
-#include<opencv2/opencv.hpp>
-#include<opencv2/core/utility.hpp>
-#include<opencv2/core/core.hpp>
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
-#include<iostream>
-using namespace std;
-using namespace cv;
-int main()
-{
-	Mat image1, final_im;
-	float angle;
-	image1 = imread("C:\\Users\\win 10\\Downloads\\pp.jpeg");
-  
-    //PUT IMAGE LOCATION U WANT TO ADD FROM YOUR COMPUTER
-	
-  cout << "Dimensions are " << image1.rows << "x" << image1.cols << endl;
-	if (image1.empty())
-	{
-		cout << "Not successfully loaded!" << endl;
-	}
-	else
-	{
-		cout << "Enter the angle by which the image should be rotated" << endl;
-		cin >> angle;
-		Point2f pt(image1.cols / 2., image1.rows / 2.);
-		Mat v = getRotationMatrix2D(pt, angle, 1.0);
-		warpAffine(image1, final_im, v, Size(image1.cols, image1.rows));
-		imshow("Image before rotation", image1);
-		imshow("Final Image", final_im);
-		waitKey(0);
-	}
-	return 0;
-}
+>>DEFINITION:
+Image processing is a method to perform some operations on an image in order to get an enhanced image
+or to extract some useful information from it.This can be done through various programming languages
+like c++,java and python.
+    In this project, c++ is used for image processing and to run this u need a zip file of OPENCV
+
+
+>>OPENCV:
+It is an open source library of programming functions mainly aimed at real-time computer vision.This 
+library is used to perform image processing.
+
+
+>>How to download OPENCV and running it on Microsoft Visual Studio:
+
+   https://www.youtube.com/watch?v=Oi3HaBH8RC4
+
+
+>>NOTE: CHANGE THE LOCATION OF IMAGE ACCORDING TO YOUR DEVICE
+	for eg:("C:\\Users\\win 10\\Downloads\\pp.jpeg")
+
+
+>FUNCTIONS USED:
+
+1.) imread(): Reads an image
+
+2.) imshow(): Displays an image
+
+3.) rows(): Gives length of image
+
+4.) cols(): Gives width of image
+
+5.) getRotationMatrix2D(): Rotates the matrix by angle given by user
+
+6.) waitkey(): Displays an image for a required time as given by user
+
+
+***************************
+
